@@ -75,8 +75,10 @@ function App() {
     value = value.toLocaleLowerCase();
     setLastLetter(value);
 
-    userLetters.push(value);
-    setUserLetters([...userLetters]);
+    if (!userLetters.includes(value)) {
+      userLetters.push(value);
+      setUserLetters([...userLetters]);
+    }
   };
 
   return (
