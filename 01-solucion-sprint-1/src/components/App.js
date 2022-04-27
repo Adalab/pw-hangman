@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
 
 // api
 import getWordFromApi from '../services/api';
