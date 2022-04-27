@@ -22,12 +22,6 @@ function App() {
 
   // events
 
-  const handleWord = (value) => {
-    setWord(value);
-    setUserLetters([]);
-    setLastLetter('');
-  };
-
   const handleKeyDown = (ev) => {
     // Sabrías decir para qué es esta línea
     ev.target.setSelectionRange(0, 1);
