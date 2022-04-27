@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
 
 // api
 import getWordFromApi from '../services/api';
@@ -15,16 +14,10 @@ function App() {
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
   const [lastLetter, setLastLetter] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [numberOfErrors, setNumberOfErrors] = useState(0);
-  const maxNumberOfErrors = 13;
-
 
   useEffect(() => {
-    setLoading(true);
     getWordFromApi().then(word => {
       setWord(word);
-      setLoading(false);
     });
   }, []);
 
@@ -86,10 +79,10 @@ function App() {
   const handleLastLetter = value => {
     value = value.toLocaleLowerCase();
     setLastLetter(value);
-    if (!userLetters.includes(value)) {
+
       userLetters.push(value);
       setUserLetters([...userLetters]);
-    }
+
 
   };
 
