@@ -7,7 +7,7 @@ const Footer = () => {
       <nav>
         <ul>
           <li className="footer__menu-item">
-            <NavLink className="footer__menu-link" to="/" exact>
+            <NavLink className="footer__menu-link" to="/">
               A jugar
             </NavLink>
           </li>

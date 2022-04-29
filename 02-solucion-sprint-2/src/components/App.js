@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // components
 import Dummy from './Dummy';
 import ErrorLetters from './ErrorLetters';
@@ -56,20 +56,19 @@ function App() {
       <Header />
       <main className="main">
         <section>
-          <Switch>
-            <Route path="/" exact>
-              <Loading loading={loading} />
-              <SolutionLetters word={word} userLetters={userLetters} />
-              <ErrorLetters word={word} userLetters={userLetters} />
-              <Form lastLetter={lastLetter} handleLastLetter={handleLastLetter} />
-            </Route>
-            <Route path="/instructions">
-              <Instructions />
-            </Route>
-            <Route path="/options">
-              <Options word={word} handleWord={handleWord} />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/"
+              element={
+                <>
+                  <SolutionLetters word={word} userLetters={userLetters} />
+                  <ErrorLetters word={word} userLetters={userLetters} />
+                  <Form lastLetter={lastLetter} handleLastLetter={handleLastLetter} />
+                </>
+              } />
+
+            <Route path="/instructions" element={<Instructions />} />
+            <Route path="/options" element={<Options word={word} handleWord={handleWord} />} />
+          </Routes>
         </section>
         <Dummy numberOfErrors={getNumberOfErrors()} />
       </main>

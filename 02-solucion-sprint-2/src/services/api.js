@@ -1,8 +1,8 @@
 const getWordFromApi = () => {
-  return fetch('https://palabras-aleatorias-public-api.herokuapp.com/random')
+  return fetch('https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/random-word-v1/word.json')
     .then(response => response.json())
     .then(response => {
-      return response.body.Word;
+      return response.word;
     });
 };
 

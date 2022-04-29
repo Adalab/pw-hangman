@@ -6,7 +6,7 @@ const Dummy = props => {
     props.numberOfErrors > maxNumberOfErrors ? maxNumberOfErrors : props.numberOfErrors;
 
   return (
-    <section className={`dummy error-4`}>
+    <section className={`dummy error-${numberOfErrors}`}>
       <span className="error-13 eye"></span>
       <span className="error-12 eye"></span>
       <span className="error-11 line"></span>
